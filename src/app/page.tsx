@@ -1,9 +1,9 @@
-import Link from "next/link";
+import HeroSection from "@/components/HeroSection";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
-      Hero Section
+    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <HeroSection />
     </div>
   );
 }
