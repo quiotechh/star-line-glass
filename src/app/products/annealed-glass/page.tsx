@@ -1,0 +1,20 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Annealed Glass - Star Line Glass",
+  description: "High-quality annealed glass products - standard float glass slowly cooled to relieve internal stresses.",
+};
+
+export default function AnnealedGlassPage() {
+  return (
+    <div className="min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h1 className="text-4xl font-bold text-brand-primary mb-6">Annealed Glass</h1>
+        <p className="text-lg text-gray-600">
+          Annealed glass is standard float glass that has been slowly cooled to relieve internal stresses.
+          It is the most common type of glass used in windows and other applications.
+        </p>
+      </div>
+    </div>
+  );
+}
