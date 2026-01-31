@@ -36,3 +36,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 # quiotech account check
+
+color for hero section
+from-black/80 via-black/50 to-transparent (black gradient)
+from-[#13007D]/80 via-[#FB0309]/40 to-transparent (purple to red)
+from-gray-900/85 via-gray-800/60 to-transparent (dark gray)
+from-[#13007D]/70 to-transparent 
