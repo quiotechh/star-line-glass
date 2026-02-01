@@ -1,218 +1,493 @@
-'use client';
+"use client";
 
-import type { Metadata } from "next";
-import { useState, useEffect, useRef } from 'react';
-import { CheckCircle, Target, Eye, Sparkles } from 'lucide-react';
+import { useState, useRef } from "react";
+import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import {
+  CheckCircle,
+  Target,
+  Sparkles,
+  Eye,
+  Award,
+  TrendingUp,
+  Shield,
+  LucideIcon,
+} from "lucide-react";
 
-// export const metadata: Metadata = {
-//   title: "About Us - Star Line Glass",
-//   description: "Learn about Star Line Glass, our history, values, and commitment to providing premium glass solutions.",
-// };
+interface Feature {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
 
-const features = [
-  {
-    icon: CheckCircle,
-    title: "Quality Assurance",
-    description: "Every product undergoes rigorous testing to ensure superior quality and durability."
-  },
-  {
-    icon: Target,
-    title: "Precision Manufacturing",
-    description: "State-of-the-art technology for accurate and consistent glass production."
-  },
-  {
-    icon: Sparkles,
-    title: "Innovation Driven",
-    description: "Continuously evolving with the latest trends and technologies in glass manufacturing."
-  }
-];
+interface Stat {
+  number: string;
+  label: string;
+}
 
 export default function AboutPage() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [activeTab, setActiveTab] = useState('mission');
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  const [activeTab, setActiveTab] = useState<"mission" | "vision">("mission");
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white py-16 md:py-24">
-      {/* Animated Background Elements */}
-      <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#13007D]/5 blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-[#FB0309]/5 blur-3xl"></div>
+    <div className="bg-white">
+      {/* Hero Section - Full Width Split */}
+      <HeroSection />
 
-      <div className="container relative mx-auto px-4 md:px-8 lg:px-16">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Left Side - Content */}
-          <div
-            className={`transition-all duration-1000 ${
-              isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
-            }`}
+      {/* Story Section - Full Width Reverse Split */}
+      <StorySection />
+
+      {/* Mission & Vision - Tabs Section */}
+      <MissionVisionSection activeTab={activeTab} setActiveTab={setActiveTab} />
+
+      {/* Core Values - Full Width Split */}
+      <CoreValuesSection />
+
+      {/* Stats Section */}
+      <StatsSection />
+    </div>
+  );
+}
+
+// Hero Section with Image on Right
+function HeroSection() {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  return (
+    <section
+      ref={ref}
+      className="relative grid min-h-[80vh] sm:min-h-screen lg:grid-cols-2"
+    >
+      {/* Left Side - Content */}
+      <div className="order-2 flex items-center bg-linear-to-br from-[#1E3A8A] to-[#1E40AF] px-4 py-12 sm:px-8 sm:py-16 md:px-12 lg:order-1 lg:px-16 xl:px-20">
+        <div className="w-full max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            {/* Section Header */}
-            <div className="mb-8">
-              <h2 className="mb-3 text-4xl font-bold text-[#13007D] md:text-5xl">
-                About <span className="text-[#FB0309]">Star Glass Line</span>
-              </h2>
-              <div className="h-1 w-24 bg-[#FB0309]"></div>
+            <h1 className="mb-4 text-3xl font-bold leading-tight text-white sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+              About <span className="text-[#FB0309]">Star Glass Line</span>
+            </h1>
+            <div className="mb-6 h-1 w-20 bg-[#FB0309] sm:mb-8 sm:h-1.5 sm:w-32"></div>
+          </motion.div>
+
+          <motion.p
+            className="mb-6 text-base leading-relaxed text-gray-200 sm:mb-8 sm:text-lg md:text-xl lg:text-2xl"
+            initial={{ opacity: 0, x: -60 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
+            Leading manufacturer of premium glass products, serving diverse
+            industries with excellence for over 15 years.
+          </motion.p>
+
+          <motion.p
+            className="text-sm leading-relaxed text-gray-300 sm:text-base md:text-lg"
+            initial={{ opacity: 0, x: -60 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          >
+            We combine traditional craftsmanship with modern technology to
+            deliver superior glass solutions that exceed expectations.
+          </motion.p>
+
+          <motion.div
+            className="mt-8 grid grid-cols-2 gap-4 sm:mt-12 sm:gap-6"
+            initial={{ opacity: 0, x: -60 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          >
+            <div className="rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm sm:p-6">
+              <p className="text-3xl font-bold text-[#FB0309] sm:text-4xl">
+                15+
+              </p>
+              <p className="mt-1 text-xs font-medium text-white sm:mt-2 sm:text-sm">
+                Years of Excellence
+              </p>
             </div>
+            <div className="rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm sm:p-6">
+              <p className="text-3xl font-bold text-[#FB0309] sm:text-4xl">
+                500+
+              </p>
+              <p className="mt-1 text-xs font-medium text-white sm:mt-2 sm:text-sm">
+                Projects Completed
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
 
-            {/* Description */}
-            <p className="mb-6 text-lg leading-relaxed text-gray-700">
-              Star Glass Line Industries is a leading manufacturer of premium glass products, 
-              serving diverse industries with excellence for over 15 years. We combine traditional 
-              craftsmanship with modern technology to deliver superior glass solutions.
-            </p>
+      {/* Right Side - Image */}
+      <motion.div
+        className="relative order-1 h-64 sm:h-80 md:h-96 lg:order-2 lg:h-auto"
+        initial={{ opacity: 0, x: 80 }}
+        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <Image
+          src="/factory1.jpeg"
+          alt="Glass Manufacturing"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent lg:bg-linear-to-r lg:from-[#1E3A8A]/30 lg:to-transparent"></div>
+      </motion.div>
+    </section>
+  );
+}
 
-            {/* Interactive Tabs */}
-            <div className="mb-8">
-              <div className="mb-4 flex gap-2 border-b border-gray-200">
-                <button
-                  onClick={() => setActiveTab('mission')}
-                  className={`relative px-6 py-3 font-semibold transition-all ${
-                    activeTab === 'mission'
-                      ? 'text-[#FB0309]'
-                      : 'text-gray-600 hover:text-[#13007D]'
-                  }`}
-                >
-                  <Eye className="mb-1 inline-block h-5 w-5" /> Mission
-                  {activeTab === 'mission' && (
-                    <div className="absolute bottom-0 left-0 h-1 w-full bg-[#FB0309]"></div>
-                  )}
-                </button>
-                <button
-                  onClick={() => setActiveTab('vision')}
-                  className={`relative px-6 py-3 font-semibold transition-all ${
-                    activeTab === 'vision'
-                      ? 'text-[#FB0309]'
-                      : 'text-gray-600 hover:text-[#13007D]'
-                  }`}
-                >
-                  <Target className="mb-1 inline-block h-5 w-5" /> Vision
-                  {activeTab === 'vision' && (
-                    <div className="absolute bottom-0 left-0 h-1 w-full bg-[#FB0309]"></div>
-                  )}
-                </button>
+// Story Section - Image on Left
+function StorySection() {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  return (
+    <section ref={ref} className="relative grid lg:grid-cols-2">
+      {/* Left Side - Image */}
+      <motion.div
+        className="relative order-2 h-64 sm:h-80 md:h-96 lg:order-1 lg:h-auto"
+        initial={{ opacity: 0, x: -80 }}
+        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <Image
+          src="/factory3.jpeg"
+          alt="Our Journey"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/40 lg:bg-linear-to-l lg:from-white/20 lg:to-transparent"></div>
+      </motion.div>
+
+      {/* Right Side - Content */}
+      <div className="order-1 flex items-center bg-gray-50 px-4 py-12 sm:px-8 sm:py-16 md:px-12 lg:order-2 lg:px-16 xl:px-20">
+        <div className="w-full max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, x: 80 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <h2 className="mb-4 text-3xl font-bold text-[#1E3A8A] sm:mb-6 sm:text-4xl md:text-5xl">
+              Our Journey
+            </h2>
+            <div className="mb-6 h-1 w-20 bg-[#FB0309] sm:mb-8 sm:w-24"></div>
+          </motion.div>
+
+          <motion.p
+            className="mb-4 text-base leading-relaxed text-gray-700 sm:mb-6 sm:text-lg"
+            initial={{ opacity: 0, x: 60 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
+            Founded in 2010, Star Glass Line Industries began with a simple
+            vision: to create glass products that blend beauty with
+            functionality. What started as a small workshop has grown into one
+            of the region{"'"}s leading glass manufacturers.
+          </motion.p>
+
+          <motion.p
+            className="mb-6 text-base leading-relaxed text-gray-700 sm:mb-8 sm:text-lg"
+            initial={{ opacity: 0, x: 60 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          >
+            Our commitment to quality, innovation, and customer satisfaction has
+            been the cornerstone of our success. Today, we serve clients across
+            architectural, automotive, and industrial sectors, delivering
+            excellence in every project.
+          </motion.p>
+
+          <div className="mt-6 space-y-3 sm:mt-10 sm:space-y-4">
+            <motion.div
+              className="flex items-start gap-3 sm:gap-4"
+              initial={{ opacity: 0, x: 60 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            >
+              <div className="rounded-full bg-[#1E3A8A]/10 p-2 sm:p-3">
+                <CheckCircle className="h-5 w-5 text-[#1E3A8A] sm:h-6 sm:w-6" />
               </div>
-
-              {/* Tab Content */}
-              <div className="rounded-lg bg-white p-6 shadow-md">
-                {activeTab === 'mission' && (
-                  <div className="animate-fadeIn">
-                    <p className="text-gray-700">
-                      To provide world-class glass manufacturing solutions that exceed customer 
-                      expectations through innovation, quality, and sustainable practices. We are 
-                      committed to building lasting relationships with our clients.
-                    </p>
-                  </div>
-                )}
-                {activeTab === 'vision' && (
-                  <div className="animate-fadeIn">
-                    <p className="text-gray-700">
-                      To be the most trusted and preferred glass manufacturing partner globally, 
-                      recognized for our commitment to excellence, innovation, and environmental 
-                      responsibility in every product we create.
-                    </p>
-                  </div>
-                )}
+              <div>
+                <h4 className="mb-1 text-sm font-semibold text-gray-800 sm:text-base">
+                  Quality First
+                </h4>
+                <p className="text-xs text-gray-600 sm:text-sm">
+                  Every product meets international standards
+                </p>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Features */}
-            <div className="space-y-4">
-              {features.map((feature, index) => {
-                const Icon = feature.icon;
-                return (
-                  <div
-                    key={index}
-                    className={`group flex items-start gap-4 rounded-lg border border-gray-100 bg-white p-4 transition-all duration-500 hover:border-[#FB0309] hover:shadow-lg ${
-                      isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
-                    }`}
-                    style={{ transitionDelay: `${index * 150}ms` }}
-                  >
-                    <div className="rounded-full bg-[#13007D]/10 p-3 transition-all group-hover:bg-[#13007D]/20">
-                      <Icon className="h-6 w-6 text-[#13007D]" />
-                    </div>
-                    <div>
-                      <h4 className="mb-1 font-semibold text-gray-800">{feature.title}</h4>
-                      <p className="text-sm text-gray-600">{feature.description}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+            <motion.div
+              className="flex items-start gap-3 sm:gap-4"
+              initial={{ opacity: 0, x: 60 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
+              transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+            >
+              <div className="rounded-full bg-[#1E3A8A]/10 p-2 sm:p-3">
+                <TrendingUp className="h-5 w-5 text-[#1E3A8A] sm:h-6 sm:w-6" />
+              </div>
+              <div>
+                <h4 className="mb-1 text-sm font-semibold text-gray-800 sm:text-base">
+                  Continuous Innovation
+                </h4>
+                <p className="text-xs text-gray-600 sm:text-sm">
+                  Staying ahead with cutting-edge technology
+                </p>
+              </div>
+            </motion.div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-          {/* Right Side - Image Grid */}
-          <div
-            className={`transition-all duration-1000 delay-300 ${
-              isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'
+// Mission & Vision Tabs
+interface MissionVisionProps {
+  activeTab: "mission" | "vision";
+  setActiveTab: (tab: "mission" | "vision") => void;
+}
+
+function MissionVisionSection({ activeTab, setActiveTab }: MissionVisionProps) {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  return (
+    <section
+      ref={ref}
+      className="bg-white px-4 py-12 sm:px-8 sm:py-16 md:px-12 lg:px-16 lg:py-20"
+    >
+      <div className="container mx-auto max-w-6xl">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: -40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -40 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <h2 className="mb-3 text-3xl font-bold text-[#1E3A8A] sm:mb-4 sm:text-4xl md:text-5xl">
+            Mission & Vision
+          </h2>
+          <div className="mx-auto mb-8 h-1 w-20 bg-[#FB0309] sm:mb-12 sm:w-24"></div>
+        </motion.div>
+
+        {/* Tabs */}
+        <motion.div
+          className="mb-6 flex flex-col justify-center gap-3 sm:mb-8 sm:flex-row sm:gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
+          <button
+            onClick={() => setActiveTab("mission")}
+            className={`group relative overflow-hidden rounded-lg px-6 py-3 text-sm font-semibold transition-all sm:px-8 sm:py-4 sm:text-base ${
+              activeTab === "mission"
+                ? "bg-[#1E3A8A] text-white"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             }`}
           >
-            <div className="relative">
-              {/* Main Image */}
-              <div className="group relative overflow-hidden rounded-2xl shadow-2xl">
-                {/* <img
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
-                  alt="Glass Manufacturing"
-                  className="h-96 w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                /> */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#13007D]/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-              </div>
+            <Eye className="mr-2 inline-block h-4 w-4 sm:h-5 sm:w-5" />
+            Our Mission
+          </button>
+          <button
+            onClick={() => setActiveTab("vision")}
+            className={`group relative overflow-hidden rounded-lg px-6 py-3 text-sm font-semibold transition-all sm:px-8 sm:py-4 sm:text-base ${
+              activeTab === "vision"
+                ? "bg-[#1E3A8A] text-white"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            <Target className="mr-2 inline-block h-4 w-4 sm:h-5 sm:w-5" />
+            Our Vision
+          </button>
+        </motion.div>
 
-              {/* Floating Cards */}
-              <div className="absolute -bottom-6 -left-6 rounded-xl bg-white p-6 shadow-xl transition-transform hover:scale-105">
-                <div className="text-center">
-                  <p className="text-3xl font-bold text-[#FB0309]">15+</p>
-                  <p className="text-sm font-semibold text-gray-600">Years Experience</p>
-                </div>
-              </div>
+        {/* Tab Content */}
+        <motion.div
+          className="rounded-2xl bg-linear-to-br from-gray-50 to-white p-6 shadow-xl sm:p-8 md:p-12"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={
+            isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }
+          }
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          key={activeTab}
+        >
+          {activeTab === "mission" && (
+            <motion.p
+              className="text-base leading-relaxed text-gray-700 sm:text-lg md:text-xl lg:text-2xl"
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              To provide world-class glass manufacturing solutions that exceed
+              customer expectations through innovation, quality, and sustainable
+              practices. We are committed to building lasting relationships with
+              our clients and contributing to their success.
+            </motion.p>
+          )}
+          {activeTab === "vision" && (
+            <motion.p
+              className="text-base leading-relaxed text-gray-700 sm:text-lg md:text-xl lg:text-2xl"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              To be the most trusted and preferred glass manufacturing partner
+              globally, recognized for our commitment to excellence, innovation,
+              and environmental responsibility in every product we create.
+            </motion.p>
+          )}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
-              <div className="absolute -right-6 -top-6 rounded-xl bg-[#13007D] p-6 shadow-xl transition-transform hover:scale-105">
-                <div className="text-center">
-                  <p className="text-3xl font-bold text-white">500+</p>
-                  <p className="text-sm font-semibold text-white/90">Projects Done</p>
-                </div>
-              </div>
-            </div>
+// Core Values - Image on Right
+function CoreValuesSection() {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  const values: Feature[] = [
+    {
+      icon: Award,
+      title: "Quality Assurance",
+      description:
+        "Every product undergoes rigorous testing to ensure superior quality and durability.",
+    },
+    {
+      icon: Target,
+      title: "Precision Manufacturing",
+      description:
+        "State-of-the-art technology for accurate and consistent glass production.",
+    },
+    {
+      icon: Sparkles,
+      title: "Innovation Driven",
+      description:
+        "Continuously evolving with the latest trends and technologies.",
+    },
+    {
+      icon: Shield,
+      title: "Customer Trust",
+      description:
+        "Building long-term relationships through transparency and reliability.",
+    },
+  ];
+
+  return (
+    <section ref={ref} className="relative grid lg:grid-cols-2">
+      {/* Left Side - Content */}
+      <div className="order-2 flex items-center bg-linear-to-br from-gray-50 to-white px-4 py-12 sm:px-8 sm:py-16 md:px-12 lg:order-1 lg:px-16 xl:px-20">
+        <div className="w-full max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <h2 className="mb-4 text-3xl font-bold text-[#1E3A8A] sm:mb-6 sm:text-4xl md:text-5xl">
+              Our Core Values
+            </h2>
+            <div className="mb-6 h-1 w-20 bg-[#FB0309] sm:mb-10 sm:w-24"></div>
+          </motion.div>
+
+          <div className="space-y-4 sm:space-y-6">
+            {values.map((value, index) => {
+              const Icon = value.icon;
+              return (
+                <motion.div
+                  key={index}
+                  className="group flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-4 transition-all hover:border-[#FB0309] hover:shadow-lg sm:gap-4 sm:p-6"
+                  initial={{ opacity: 0, x: -60 }}
+                  animate={
+                    isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }
+                  }
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.2 + index * 0.15,
+                    ease: "easeOut",
+                  }}
+                  whileHover={{ x: 8 }}
+                >
+                  <div className="rounded-full bg-[#1E3A8A]/10 p-2 transition-all group-hover:bg-[#1E3A8A]/20 sm:p-3">
+                    <Icon className="h-5 w-5 text-[#13007D] sm:h-6 sm:w-6" />
+                  </div>
+                  <div>
+                    <h4 className="mb-1 text-base font-semibold text-gray-800 sm:mb-2 sm:text-lg">
+                      {value.title}
+                    </h4>
+                    <p className="text-sm text-gray-600 sm:text-base">
+                      {value.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+      {/* Right Side - Image */}
+      <motion.div
+        className="relative order-1 h-64 sm:h-80 md:h-96 lg:order-2 lg:h-auto"
+        initial={{ opacity: 0, x: 80 }}
+        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <Image
+          src="/factory8.jpeg"
+          alt="Core Values"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent lg:bg-linear-to-l lg:from-[#1E3A8A]/20 lg:to-transparent"></div>
+      </motion.div>
+    </section>
+  );
+}
 
-        .animate-fadeIn {
-          animation: fadeIn 0.5s ease-out;
-        }
-      `}</style>
+// Stats Section
+function StatsSection() {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  const stats: Stat[] = [
+    { number: "300+", label: "Happy Clients" },
+    { number: "500+", label: "Projects Completed" },
+    { number: "15+", label: "Years of Excellence" },
+    { number: "ISO", label: "Certified Quality" },
+  ];
+
+  return (
+    <section
+      ref={ref}
+      className="bg-[#1E3A8A] px-4 py-12 sm:px-8 sm:py-16 md:py-20"
+    >
+      <div className="container mx-auto max-w-6xl">
+        <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              className="text-center"
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.15,
+                ease: "easeOut",
+              }}
+            >
+              <p className="mb-2 text-4xl font-bold text-[#FB0309] sm:text-5xl">
+                {stat.number}
+              </p>
+              <p className="text-base font-medium text-white sm:text-lg">
+                {stat.label}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
