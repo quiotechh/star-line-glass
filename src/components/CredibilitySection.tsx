@@ -31,7 +31,7 @@ const stats = [
 
 export default function CredibilitySection() {
   return (
-    <section className="relative bg-white py-12 sm:py-16 md:py-20">
+    <section className="relative w-full overflow-hidden bg-white py-12 sm:py-16 md:py-20">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
         {/* Section Header */}
         <div className="mb-8 text-center sm:mb-10 md:mb-12">
