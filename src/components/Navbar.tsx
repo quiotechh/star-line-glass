@@ -24,7 +24,7 @@ const navLinks = [
   { name: "Contact Us", href: "/contact" },
 ];
 
-const WHATSAPP_NUMBER = "919999999999"; // Replace with actual number
+const WHATSAPP_NUMBER = "9198110 31849"; // Replace with actual number
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hi, I'd like to inquire about your glass products"
 );
@@ -60,11 +60,11 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
+  // Close mobile menu helper
+  const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
     setIsMobileProductsOpen(false);
-  }, [pathname]);
+  };
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -93,7 +93,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-white shadow-lg"
-          : "bg-white/95 backdrop-blur-sm"
+          : "bg-white/95 backdrop-blur-sm shadow-sm"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,7 +132,7 @@ export default function Navbar() {
               alt="Star Line Glass Logo"
               width={150}
               height={50}
-              className="h-12 w-auto object-contain"
+              className="h-12 w-auto object-contain scale-135 scale-x-145"
               priority
             />
           </Link>
@@ -229,7 +229,7 @@ export default function Navbar() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-brand-secondary hover:bg-brand-secondary/90 text-white font-semibold px-4 py-2.5 rounded-lg transition-all duration-200 hover:shadow-lg text-sm sm:text-base"
+            className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold px-4 py-2.5 rounded-lg transition-all duration-200 hover:shadow-lg text-sm sm:text-base"
           >
             <svg
               className="w-5 h-5"
@@ -303,6 +303,7 @@ export default function Navbar() {
                           <li key={item.name}>
                             <Link
                               href={item.href}
+                              onClick={closeMobileMenu}
                               className={`block px-8 py-3 text-sm transition-colors ${
                                 isActiveLink(item.href)
                                   ? "text-brand-primary font-medium"
@@ -319,6 +320,7 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={link.href}
+                    onClick={closeMobileMenu}
                     className={`block px-6 py-4 text-base font-medium transition-colors ${
                       isActiveLink(link.href)
                         ? "text-brand-primary bg-brand-primary/5 border-l-4 border-brand-primary"
@@ -338,7 +340,7 @@ export default function Navbar() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full bg-brand-secondary hover:bg-brand-secondary/90 text-white font-semibold px-4 py-3 rounded-lg transition-all duration-200"
+              className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold px-4 py-3 rounded-lg transition-all duration-200"
             >
               <svg
                 className="w-5 h-5"
