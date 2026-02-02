@@ -42,7 +42,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative h-[70vh] w-full overflow-hidden sm:h-[80vh] md:h-screen">
+    <section className="relative h-[70vh] w-full overflow-hidden sm:h-[80vh] md:h-screen">
       {/* Carousel Slides */}
       {slides.map((slide, index) => (
         <div
@@ -124,6 +124,6 @@ export default function HeroSection() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

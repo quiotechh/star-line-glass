@@ -28,7 +28,7 @@ export default function AboutSectionHome() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-linear-to-br from-gray-50 to-white py-12 sm:py-16 md:py-20"
+      className="relative w-full overflow-hidden bg-linear-to-br from-gray-50 to-white py-12 sm:py-16 md:py-20"
     >
       {/* Background Animation */}
       <motion.div
@@ -86,7 +86,7 @@ export default function AboutSectionHome() {
 
               {/* Floating Stats */}
               <motion.div
-                className="absolute -bottom-4 -left-4 z-10 rounded-xl bg-white p-4 shadow-xl sm:-bottom-6 sm:-left-6 sm:rounded-2xl sm:p-6"
+                className="absolute bottom-2 left-2 z-10 rounded-xl bg-white p-3 shadow-xl sm:-bottom-6 sm:-left-6 sm:rounded-2xl sm:p-6"
                 initial={{ scale: 0, rotate: -10 }}
                 animate={
                   isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -10 }
@@ -103,7 +103,7 @@ export default function AboutSectionHome() {
               </motion.div>
 
               <motion.div
-                className="absolute -right-4 -top-4 z-10 rounded-xl bg-[#13007D] p-4 shadow-xl sm:-right-6 sm:-top-6 sm:rounded-2xl sm:p-6"
+                className="absolute right-2 top-2 z-10 rounded-xl bg-[#13007D] p-3 shadow-xl sm:-right-6 sm:-top-6 sm:rounded-2xl sm:p-6"
                 initial={{ scale: 0, rotate: 10 }}
                 animate={
                   isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: 10 }
@@ -111,7 +111,7 @@ export default function AboutSectionHome() {
                 transition={{ delay: 1, type: "spring", stiffness: 200 }}
                 whileHover={{ scale: 1.1, rotate: -5 }}
               >
-                <p className="text-3xl font-bold text-white sm:text-4xl">
+                <p className="text-2xl font-bold text-white sm:text-4xl">
                   500+
                 </p>
                 <p className="text-xs font-semibold text-white/90 sm:text-sm">
