@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Our Products - Star Line Glass",
-  description: "Explore our range of premium glass products including annealed glass, toughened glass, fluted glass, insulated glasses, laminate safety glass, and heat soaked glass.",
+  description: "Explore our range of premium glass products including annealed glass, toughened glass, fluted glass, insulated glasses, laminate safety glass, heat soaked glass, fabric glass, bulletproof glass, and patterned glass.",
 };
 
 const products = [
@@ -36,6 +36,21 @@ const products = [
     name: "Heat Soaked Glass",
     href: "/products/heat-soaked-glass",
     description: "Toughened glass that undergoes additional heat treatment for higher reliability.",
+  },
+  {
+    name: "Fabric Glass",
+    href: "/products/fabric-glass",
+    description: "Innovative decorative glass with fabric-inspired textures and patterns for artistic interiors.",
+  },
+  {
+    name: "Bulletproof Glass",
+    href: "/products/bulletproof-glass",
+    description: "Ballistic-resistant security glass designed for high-protection environments.",
+  },
+  {
+    name: "Patterned Glass",
+    href: "/products/patterned-glass",
+    description: "Decorative textured glass offering privacy with beautiful light diffusion.",
   },
 ];
 
