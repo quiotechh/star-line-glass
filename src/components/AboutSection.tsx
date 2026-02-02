@@ -95,7 +95,7 @@ export default function AboutSectionHome() {
                 whileHover={{ scale: 1.1, rotate: 5 }}
               >
                 <p className="text-3xl font-bold text-[#FB0309] sm:text-4xl">
-                  15+
+                  20+
                 </p>
                 <p className="text-xs font-semibold text-gray-600 sm:text-sm">
                   Years

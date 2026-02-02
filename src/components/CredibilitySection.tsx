@@ -5,7 +5,7 @@ import { Award, Users, Briefcase, Factory } from 'lucide-react';
 const stats = [
   {
     icon: Factory,
-    number: "15+",
+    number: "20+",
     label: "Years of Excellence",
     description: "Manufacturing Quality Glass"
   },
