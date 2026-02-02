@@ -79,7 +79,7 @@ function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
             Leading manufacturer of premium glass products, serving diverse
-            industries with excellence for over 15 years.
+            industries with excellence for over 20 years.
           </motion.p>
 
           <motion.p
@@ -100,7 +100,7 @@ function HeroSection() {
           >
             <div className="rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm sm:p-6">
               <p className="text-3xl font-bold text-[#FB0309] sm:text-4xl">
-                15+
+                20+
               </p>
               <p className="mt-1 text-xs font-medium text-white sm:mt-2 sm:text-sm">
                 Years of Excellence
@@ -181,7 +181,7 @@ function StorySection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            Founded in 2010, Star Glass Line Industries began with a simple
+            Founded in 2013, Star Glass Line Industries began with a simple
             vision: to create glass products that blend beauty with
             functionality. What started as a small workshop has grown into one
             of the region{"'"}s leading glass manufacturers.
@@ -455,7 +455,7 @@ function StatsSection() {
   const stats: Stat[] = [
     { number: "300+", label: "Happy Clients" },
     { number: "500+", label: "Projects Completed" },
-    { number: "15+", label: "Years of Excellence" },
+    { number: "20+", label: "Years of Excellence" },
     { number: "ISO", label: "Certified Quality" },
   ];
 

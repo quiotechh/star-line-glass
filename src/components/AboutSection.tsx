@@ -94,8 +94,8 @@ export default function AboutSectionHome() {
                 transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
                 whileHover={{ scale: 1.1, rotate: 5 }}
               >
-                <p className="text-2xl font-bold text-[#FB0309] sm:text-4xl">
-                  15+
+                <p className="text-3xl font-bold text-[#FB0309] sm:text-4xl">
+                  20+
                 </p>
                 <p className="text-xs font-semibold text-gray-600 sm:text-sm">
                   Years

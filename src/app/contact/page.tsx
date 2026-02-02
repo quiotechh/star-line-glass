@@ -120,9 +120,9 @@ function ContactSection() {
     setStatus({ type: null, message: "" });
 
     try {
-      const serviceId = "YOUR_SERVICE_ID";
-      const templateId = "YOUR_TEMPLATE_ID";
-      const publicKey = "YOUR_PUBLIC_KEY";
+      const serviceId = "service_1o3uflg";
+      const templateId = "template_7f6gfyn";
+      const publicKey = "qoXYjVQBNPQ9E9bud";
 
       await emailjs.sendForm(
         serviceId,
@@ -158,28 +158,28 @@ function ContactSection() {
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+91 98110 31849", "+91 98110 31835"],
-      link: "tel:+919811031849",
+      details: ["Sales: +91 9811031824", "Enquiry: +91 9811031849"],
+      link: "tel:+919811031824",
       color: "bg-blue-50 text-blue-600",
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@starglassline.com", "sales@starglassline.com"],
-      link: "mailto:info@starglassline.com",
+      details: ["starlineglassind22@gmail.com"],
+      link: "mailto:starlineglassind22@gmail.com",
       color: "bg-green-50 text-green-600",
     },
     {
       icon: Clock,
       title: "Working Hours",
-      details: ["Mon - Sat: 9:00 AM - 6:00 PM", "Sunday: Closed"],
+      details: ["Mon - Sat: 9:00 AM - 7:00 PM", "Sunday: Closed"],
       link: null,
       color: "bg-orange-50 text-orange-600",
     },
     {
       icon: Building2,
       title: "Visit Us",
-      details: ["Star Glass Line Industries", "Premium Glass Manufacturing"],
+      details: ["Khasra No. 712 Khasra No. 713, Industrial Area, Meerut road, Behind HLM College, Vill Duhai, Muradnagar, Ghaziabad, UP 201206"],
       link: null,
       color: "bg-purple-50 text-purple-600",
     },
@@ -220,12 +220,12 @@ function ContactSection() {
                 {card.details.map((detail, idx) => (
                   <p key={idx} className="text-sm text-gray-600">
                     {card.link && idx === 0 ? (
-                      <a
+                      <Link
                         href={card.link}
                         className="hover:text-[#FB0309] transition-colors font-medium"
                       >
                         {detail}
-                      </a>
+                      </Link>
                     ) : (
                       detail
                     )}
@@ -419,7 +419,7 @@ function ContactSection() {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-[#FB0309]" />
-                    <span>15+ years of industry experience</span>
+                    <span>20+ years of industry experience</span>
                   </li>
                 </ul>
               </div>
