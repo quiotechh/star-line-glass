@@ -322,20 +322,39 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4 text-sm">
               <Link
-                href="/privacy-policy"
+                href="/"
                 className="text-gray-500 hover:text-white transition-colors duration-200"
               >
                 Privacy Policy
               </Link>
               <span className="text-gray-700">|</span>
               <Link
-                href="/terms"
+                href="/"
                 className="text-gray-500 hover:text-white transition-colors duration-200"
               >
                 Terms of Service
               </Link>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Developer Credit Banner */}
+      <div className="bg-[#0a0a0a] border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <p className="text-center text-xs text-gray-500">
+            Made with{" "}
+            <span className="text-red-500">❤️</span>
+            {" "}by{" "}
+            <a
+              href="https://www.quiotech.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white font-medium transition-colors duration-200"
+            >
+              Quiotech
+            </a>
+          </p>
         </div>
       </div>
     </footer>
