@@ -404,6 +404,198 @@ export const productsData: Record<string, ProductData> = {
       "Premium quality assurance",
     ],
   },
+
+  "fabric-glass": {
+    slug: "fabric-glass",
+    name: "Fabric Glass",
+    tagline:
+      "Where artistry meets architecture - elegant fabric-inspired decorative glass",
+    description:
+      "Fabric glass is an innovative decorative glass that cleverly integrates fabric elements and patterns into glass, creating a unique aesthetic that combines the softness of textiles with the durability of glass. This architectural glass adds warmth, texture, and visual interest to any space while maintaining excellent light transmission and creating a soft, diffused ambiance.",
+    heroImage: "/products/fabric-glass.jpg",
+    features: [
+      {
+        title: "Unique Aesthetics",
+        description:
+          "Combines fabric-inspired textures with glass durability, adding artistic warmth to any space.",
+        icon: "palette",
+      },
+      {
+        title: "Soft Light Diffusion",
+        description:
+          "Scatters light beautifully, avoiding harsh glare while maintaining brightness.",
+        icon: "sun",
+      },
+      {
+        title: "Design Flexibility",
+        description:
+          "Available in various fabric patterns from subtle weaves to bold abstract designs.",
+        icon: "brush",
+      },
+      {
+        title: "Durable & Hygienic",
+        description:
+          "Antibacterial properties and wear-resistant surface for practical everyday use.",
+        icon: "shield",
+      },
+    ],
+    specifications: [
+      { label: "Thickness Range", value: "6mm to 12mm" },
+      { label: "Maximum Size", value: "2440mm x 3660mm" },
+      { label: "Light Transmission", value: "60% to 85%" },
+      { label: "Pattern Options", value: "Woven, Linen, Mesh, Abstract" },
+      { label: "Finishes", value: "Clear, Frosted, Tinted" },
+      { label: "Processing", value: "Can be Toughened or Laminated" },
+    ],
+    applications: [
+      "Interior partitions and room dividers",
+      "Doors and windows with decorative appeal",
+      "Hotel lobbies and luxury interiors",
+      "Feature walls and accent panels",
+      "Cabinet doors and furniture",
+      "Building facades with textile aesthetics",
+    ],
+    galleryImages: [
+      "/images/products/fabric-1.jpg",
+      "/images/products/fabric-2.jpg",
+      "/images/products/fabric-3.jpg",
+    ],
+    benefits: [
+      "Adds artistic touch to architecture",
+      "Soft, warm visual appearance",
+      "Easy to clean and maintain",
+      "Resists dust and bacteria",
+      "Unique alternative to plain glass",
+    ],
+  },
+
+  "bulletproof-glass": {
+    slug: "bulletproof-glass",
+    name: "Bulletproof Glass",
+    tagline:
+      "Ultimate protection against ballistic threats - security without compromise",
+    description:
+      "Bulletproof glass, also known as ballistic or bullet-resistant glass, is a specialized security glass designed to resist penetration from bullets and high-impact threats. Created by layering multiple materials including glass, polycarbonate, and acrylic, this glass absorbs and disperses projectile energy, providing crucial protection for high-security environments while maintaining visibility.",
+    heroImage: "/products/bulletproof-glass.jpg",
+    features: [
+      {
+        title: "Ballistic Protection",
+        description:
+          "Resists bullets from handguns to high-powered rifles depending on protection level.",
+        icon: "shield",
+      },
+      {
+        title: "Multi-Layer Construction",
+        description:
+          "Layered glass and polycarbonate absorb and disperse bullet energy effectively.",
+        icon: "layers",
+      },
+      {
+        title: "Safety Enhancement",
+        description:
+          "Prevents sharp fragments from breaking off, minimizing injury risk to occupants.",
+        icon: "heart",
+      },
+      {
+        title: "Crime Deterrent",
+        description:
+          "Visible security presence discourages potential attackers and intrusion attempts.",
+        icon: "lock",
+      },
+    ],
+    specifications: [
+      { label: "Thickness Range", value: "19mm to 75mm" },
+      { label: "Protection Levels", value: "UL 752 Level 1-10" },
+      { label: "Materials", value: "Glass, Polycarbonate, Acrylic layers" },
+      { label: "Maximum Size", value: "2000mm x 3000mm" },
+      { label: "Optical Clarity", value: "Clear visibility maintained" },
+      { label: "Standards", value: "UL 752, NIJ, EN 1063" },
+    ],
+    applications: [
+      "Banks and financial institutions",
+      "Government and embassy buildings",
+      "Jewelry stores and high-value retail",
+      "Schools and educational facilities",
+      "Armored vehicles and VIP transport",
+      "Security checkpoints and guard booths",
+    ],
+    galleryImages: [
+      "/images/products/bulletproof-1.jpg",
+      "/images/products/bulletproof-2.jpg",
+      "/images/products/bulletproof-3.jpg",
+    ],
+    benefits: [
+      "Maximum security protection",
+      "Delays forced entry significantly",
+      "Decades of reliable performance",
+      "Various protection levels available",
+      "Peace of mind for high-risk areas",
+    ],
+  },
+
+  "patterned-glass": {
+    slug: "patterned-glass",
+    name: "Patterned Glass",
+    tagline:
+      "Privacy with personality - decorative textures that transform light",
+    description:
+      "Patterned glass is a decorative glass featuring textures or patterns embossed onto one or both sides, offering privacy while allowing natural light to diffuse beautifully into spaces. Made by feeding molten glass between patterned rollers, this versatile glass comes in countless designs from subtle frosted textures to bold geometric patterns, perfect for both residential and commercial applications.",
+    heroImage: "/products/patterned-glass.jpg",
+    features: [
+      {
+        title: "Privacy with Light",
+        description:
+          "Obscures direct view while allowing natural light to flow through for functional privacy.",
+        icon: "eye-off",
+      },
+      {
+        title: "Decorative Appeal",
+        description:
+          "Wide variety of patterns and textures add visual interest and enhance aesthetics.",
+        icon: "sparkles",
+      },
+      {
+        title: "Energy Efficient",
+        description:
+          "Diffuses sunlight reducing need for artificial lighting while controlling heat.",
+        icon: "zap",
+      },
+      {
+        title: "Easy Maintenance",
+        description:
+          "Textured surface resists fingerprints and smudges, staying cleaner longer.",
+        icon: "settings",
+      },
+    ],
+    specifications: [
+      { label: "Thickness Range", value: "4mm to 6mm" },
+      { label: "Maximum Size", value: "2140mm x 3300mm" },
+      { label: "Light Transmission", value: "50% to 90%" },
+      { label: "Pattern Types", value: "Frosted, Ribbed, Rain, Karatachi, Mistlite" },
+      { label: "Colors", value: "Clear, Bronze, Grey, Green" },
+      { label: "Processing", value: "Can be Toughened, Laminated, or Insulated" },
+    ],
+    applications: [
+      "Bathroom windows and shower enclosures",
+      "Interior partitions and office dividers",
+      "Front doors and entry sidelights",
+      "Kitchen cabinets and pantry doors",
+      "Conference rooms and meeting spaces",
+      "Healthcare facilities and waiting areas",
+    ],
+    galleryImages: [
+      "/images/products/patterned-1.jpg",
+      "/images/products/patterned-2.jpg",
+      "/images/products/patterned-3.jpg",
+    ],
+    benefits: [
+      "Excellent privacy solution",
+      "Countless design options",
+      "Durable and hygienic surface",
+      "Reduces need for window treatments",
+      "Suitable for safety glass processing",
+    ],
+  },
 };
 
 export const getProductBySlug = (slug: string): ProductData | undefined => {

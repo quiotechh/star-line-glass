@@ -57,6 +57,27 @@ const products: Product[] = [
     description: "Textured decorative glass with elegant vertical ribbed pattern.",
     features: ["Privacy Glass", "Decorative", "Light Diffusion"],
   },
+  {
+    name: "Fabric Glass",
+    href: "/products/fabric-glass",
+    image: "/products/fabric-glass.jpg",
+    description: "Innovative decorative glass with fabric-inspired textures and patterns.",
+    features: ["Artistic Design", "Soft Lighting", "Unique Aesthetics"],
+  },
+  {
+    name: "Bulletproof Glass",
+    href: "/products/bulletproof-glass",
+    image: "/products/bulletproof-glass.jpg",
+    description: "Ballistic-resistant security glass for high-protection environments.",
+    features: ["Ballistic Protection", "Multi-Layer", "High Security"],
+  },
+  {
+    name: "Patterned Glass",
+    href: "/products/patterned-glass",
+    image: "/products/patterned-glass.jpg",
+    description: "Decorative textured glass offering privacy with beautiful light diffusion.",
+    features: ["Privacy Solution", "Decorative", "Low Maintenance"],
+  },
 ];
 
 // Product Card Component
