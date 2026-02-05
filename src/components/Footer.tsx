@@ -45,6 +45,11 @@ const phoneNumbers = [
     href: "tel:+919811031835",
     label: "CEO: Mohd Sartaj Saifi",
   },
+  {
+    number: "98110 31895",
+    href: "tel:+9198110 31895",
+    label: "Delhi",
+  },
 ];
 
 const contactInfo = {
