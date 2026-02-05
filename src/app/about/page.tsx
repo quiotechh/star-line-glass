@@ -181,7 +181,7 @@ function StorySection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            Founded in 2013, Star Glass Line Industries began with a simple
+            Founded in 2013, Star Glass Industries began with a simple
             vision: to create glass products that blend beauty with
             functionality. What started as a small workshop has grown into one
             of the region{"'"}s leading glass manufacturers.

@@ -435,7 +435,7 @@ function ContactSection() {
                   facility in action.
                 </p>
                 <Link
-                  href="https://share.google/F3kk9oliqdApAvxdw"
+                  href="https://www.google.com/search?sca_esv=2d75fd89a7b477b4&authuser=1&sxsrf=ANbL-n4wj2XZr3prMvGNaHc9V1A8sbaKVA:1769595077173&kgmid=/g/11wtph0ngd&q=STAR+LINE+GLASS+INDUSTRIES+(Unit+-+2)&shem=bdsle,ptotple,shrtsdl&shndl=30&source=sh/x/loc/uni/m1/1&kgs=0df508bdad3cefbb&utm_source=bdsle,ptotple,shrtsdl,sh/x/loc/uni/m1/1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 font-semibold text-[#FB0309] transition-all hover:gap-3"
