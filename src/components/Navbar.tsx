@@ -28,7 +28,7 @@ const navLinks = [
   { name: "Contact Us", href: "/contact" },
 ];
 
-const WHATSAPP_NUMBER = "9198110 31849"; // Replace with actual number
+const WHATSAPP_NUMBER = "9198110 31824"; // Replace with actual number
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hi, I'd like to inquire about your glass products"
 );

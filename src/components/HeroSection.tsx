@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const slides = [
   {
@@ -82,15 +83,15 @@ export default function HeroSection() {
                 </p>
 
                 {/* CTA Button - WhatsApp Link */}
-                <a
-                  href="https://wa.me/919811031849?text=Hi%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20glass%20products"
+                <Link
+                  href="https://wa.me/919811031824?text=Hi%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20glass%20products"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative inline-block overflow-hidden rounded-md bg-[#FB0309] px-6 py-3 text-base font-semibold text-white transition-all duration-300 hover:shadow-2xl hover:shadow-[#FB0309]/50 sm:px-7 sm:py-3.5 md:px-8 md:py-4 md:text-lg"
                 >
                   <span className="relative z-10">Get a Quote</span>
                   <div className="absolute inset-0 z-0 bg-linear-to-r from-[#FB0309] to-red-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
