@@ -330,16 +330,60 @@ function HeroSection() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
+  // Sample background images - replace with your actual project images
+  const backgroundImages = [
+    "/projects/ralling.jpeg",
+    "/projects/krishna_nagar_zudio.jpeg",
+    "/projects/kashmiri_gate_zudio.jpeg",
+    "/projects/preet_vihar_zudio.jpeg",
+    "/projects/niet(1).jpeg",
+    "/projects/godrej_gk.jpeg",
+  ];
+
   return (
     <section
       ref={ref}
-      className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-linear-to-br from-[#13007D] via-[#13007D]/95 to-[#13007D]/80"
+      className="relative min-h-[60vh] flex items-center justify-center overflow-hidden"
     >
-      {/* Animated Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Background Image Carousel */}
+      <div className="absolute inset-0">
+        <motion.div
+          className="flex h-full"
+          animate={{
+            x: [0, `-${backgroundImages.length * 100}%`],
+          }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 40,
+              ease: "linear",
+            },
+          }}
+        >
+          {[...backgroundImages, ...backgroundImages].map((image, index) => (
+            <div key={index} className="relative min-w-full h-full shrink-0">
+              <Image
+                src={image}
+                alt={`Background ${index + 1}`}
+                fill
+                className="object-cover"
+                priority={index < 2}
+              />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/60 z-1"></div>
+
+      {/* Animated Pattern Overlay */}
+      <div className="absolute inset-0 opacity-10 z-2">
         <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat animate-pulse"></div>
       </div>
 
+      {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
