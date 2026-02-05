@@ -18,21 +18,22 @@ const productLinks = [
   { name: "Fabric Glass", href: "/products/fabric-glass" },
   { name: "Bulletproof Glass", href: "/products/bulletproof-glass" },
   { name: "Patterned Glass", href: "/products/patterned-glass" },
+  { name: "Reflective and Tinted Glass", href: "/products/reflective-tinted-glass" },
 ];
 
 const branches = [
   {
-    name: "Ghaziabad Branch",
+    name: "Delhi (Unit-1)",
+    address: "J18, Udyog Nagar, Mangolpuri, New Delhi, Delhi, 110041",
+    mapLink:
+      "https://www.google.com/search?sca_esv=2d75fd89a7b477b4&authuser=1&sxsrf=ANbL-n7C0hrM33Fz8PTnRxbAFpRdZM5fzw:1769595054586&kgmid=/g/11wfl5_lry&q=STAR+GLASS+INDUSTRIES&shem=bdsle,ptotple,shrtsdl&shndl=30&source=sh/x/loc/uni/m1/1&kgs=85c232d6dddce1a2&utm_source=bdsle,ptotple,shrtsdl,sh/x/loc/uni/m1/1",
+  },
+  {
+    name: "Ghaziabad (Unit-2)",
     address:
       "Khasra no. 712, khasra no. 713, Industrial area, Meerut road, Behind HLM College, Vill DuhaI, Muradnagar, Ghaziabad, UP 201206",
     mapLink:
       "https://www.google.com/search?sca_esv=2d75fd89a7b477b4&authuser=1&sxsrf=ANbL-n4wj2XZr3prMvGNaHc9V1A8sbaKVA:1769595077173&kgmid=/g/11wtph0ngd&q=STAR+LINE+GLASS+INDUSTRIES+(Unit+-+2)&shem=bdsle,ptotple,shrtsdl&shndl=30&source=sh/x/loc/uni/m1/1&kgs=0df508bdad3cefbb&utm_source=bdsle,ptotple,shrtsdl,sh/x/loc/uni/m1/1",
-  },
-  {
-    name: "Delhi Branch",
-    address: "J18, Udyog Nagar, Mangolpuri, New Delhi, Delhi, 110041",
-    mapLink:
-      "https://www.google.com/search?sca_esv=2d75fd89a7b477b4&authuser=1&sxsrf=ANbL-n7C0hrM33Fz8PTnRxbAFpRdZM5fzw:1769595054586&kgmid=/g/11wfl5_lry&q=STAR+GLASS+INDUSTRIES&shem=bdsle,ptotple,shrtsdl&shndl=30&source=sh/x/loc/uni/m1/1&kgs=85c232d6dddce1a2&utm_source=bdsle,ptotple,shrtsdl,sh/x/loc/uni/m1/1",
   },
 ];
 

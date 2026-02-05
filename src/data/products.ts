@@ -596,6 +596,131 @@ export const productsData: Record<string, ProductData> = {
       "Suitable for safety glass processing",
     ],
   },
+  "reflective-glass": {
+  slug: "reflective-glass",
+  name: "Reflective Glass",
+  tagline:
+    "Mirror-like exterior with superior heat control - where energy efficiency meets modern aesthetics",
+  description:
+    "Reflective glass features a metallic coating that creates a mirror-like appearance on one side while reducing solar heat gain and glare. This high-performance glass is ideal for commercial buildings and modern architecture, offering exceptional energy efficiency by reflecting infrared and ultraviolet rays while maintaining clear outward visibility from the interior.",
+  heroImage: "/products/reflective-glass.jpg",
+  features: [
+    {
+      title: "Solar Heat Rejection",
+      description:
+        "Advanced coating reflects up to 80% of solar heat, reducing cooling costs significantly.",
+      icon: "thermometer",
+    },
+    {
+      title: "Glare Reduction",
+      description:
+        "Minimizes harsh sunlight and glare, creating comfortable interior environments.",
+      icon: "sun-dim",
+    },
+    {
+      title: "Privacy Enhancement",
+      description:
+        "One-way visibility provides daytime privacy while maintaining outward views.",
+      icon: "shield-check",
+    },
+    {
+      title: "Modern Aesthetics",
+      description:
+        "Sleek, contemporary mirror finish enhances building facades with striking visual appeal.",
+      icon: "building",
+    },
+  ],
+  specifications: [
+    { label: "Thickness Range", value: "4mm to 12mm" },
+    { label: "Maximum Size", value: "2440mm x 3660mm" },
+    { label: "Coating Options", value: "Silver, Gold, Bronze, Blue, Green, Grey" },
+    { label: "Light Transmission", value: "8% to 50%" },
+    { label: "Solar Heat Gain", value: "0.25 to 0.45 SHGC" },
+    { label: "Processing", value: "Can be Toughened, Laminated, or Double Glazed" },
+  ],
+  applications: [
+    "Commercial building facades and curtain walls",
+    "Office towers and corporate headquarters",
+    "Shopping malls and retail complexes",
+    "Automotive and transportation facilities",
+    "Hospitals and educational institutions",
+    "Residential high-rise buildings",
+  ],
+  galleryImages: [
+    "/images/products/reflective-1.jpg",
+    "/images/products/reflective-2.jpg",
+    "/images/products/reflective-3.jpg",
+  ],
+  benefits: [
+    "Significant energy cost savings",
+    "UV protection prevents interior fading",
+    "Enhanced building security and privacy",
+    "Reduces carbon footprint",
+    "Low maintenance requirements",
+  ],
+},
+
+"reflective-tinted-glass": {
+  slug: "reflective-tinted-glass",
+  name: "Reflective and Tinted Glass",
+  tagline:
+    "Color-infused performance glass - combining style, comfort, and energy efficiency",
+  description:
+    "Relective and Tinted glass is manufactured by adding color additives during the float glass production process, creating glass with inherent color throughout its thickness. This versatile glass reduces solar heat transmission and glare while adding aesthetic appeal to buildings. Available in various colors, tinted glass maintains natural lighting while providing enhanced comfort and energy efficiency.",
+  heroImage: "/products/reflective-tinted-glass.png",
+  features: [
+    {
+      title: "Heat Absorption",
+      description:
+        "Absorbs solar radiation, reducing heat transfer and cooling load by up to 50%.",
+      icon: "flame",
+    },
+    {
+      title: "Color Variety",
+      description:
+        "Wide range of colors to complement architectural design and branding requirements.",
+      icon: "palette",
+    },
+    {
+      title: "Glare Control",
+      description:
+        "Reduces eye strain and discomfort from bright sunlight while preserving views.",
+      icon: "eye",
+    },
+    {
+      title: "UV Protection",
+      description:
+        "Blocks up to 95% of harmful UV rays, protecting interiors from fading and damage.",
+      icon: "shield",
+    },
+  ],
+  specifications: [
+    { label: "Thickness Range", value: "4mm to 12mm" },
+    { label: "Maximum Size", value: "2440mm x 3660mm" },
+    { label: "Color Options", value: "Bronze, Grey, Green, Blue, Dark Grey, Euro Grey" },
+    { label: "Light Transmission", value: "14% to 55%" },
+    { label: "Solar Heat Gain", value: "0.40 to 0.65 SHGC" },
+    { label: "Processing", value: "Can be Toughened, Laminated, or Insulated" },
+  ],
+  applications: [
+    "Commercial facades and office buildings",
+    "Residential windows and balcony glazing",
+    "Skylights and canopies",
+    "Automotive and transportation glass",
+    "Interior partitions and decorative applications",
+    "Furniture and tabletops",
+  ],
+  galleryImages: [
+    "/images/products/reflective-tinted-glass.png",
+  ],
+  benefits: [
+    "Reduces energy consumption and costs",
+    "Enhances visual comfort",
+    "Maintains natural daylight",
+    "Color remains permanent and uniform",
+    "Cost-effective solar control solution",
+  ],
+},
 };
 
 export const getProductBySlug = (slug: string): ProductData | undefined => {

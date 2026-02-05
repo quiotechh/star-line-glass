@@ -21,6 +21,7 @@ const navLinks = [
       { name: "Fabric Glass", href: "/products/fabric-glass" },
       { name: "Bulletproof Glass", href: "/products/bulletproof-glass" },
       { name: "Patterned Glass", href: "/products/patterned-glass" },
+      { name: "Reflective and Tinted Glass", href: "/products/reflective-tinted-glass" }
     ],
   },
   { name: "Projects", href: "/projects" },

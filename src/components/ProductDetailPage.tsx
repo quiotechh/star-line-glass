@@ -79,7 +79,7 @@ export default function ProductDetailPage({ product }: ProductDetailPageProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-brand-primary overflow-hidden">
+      <section className="relative bg-linear-to-br from-slate-900 via-slate-800 to-brand-primary overflow-hidden">
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:4rem_4rem]" />
