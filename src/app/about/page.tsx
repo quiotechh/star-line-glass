@@ -181,10 +181,8 @@ function StorySection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            Founded in 2013, Star Glass Industries began with a simple
-            vision: to create glass products that blend beauty with
-            functionality. What started as a small workshop has grown into one
-            of the region{"'"}s leading glass manufacturers.
+            Founded in <b>2013, Star Glass Industries (Delhi)</b> began with a clear vision — to create glass products that seamlessly blend beauty with functionality. What started as a small workshop steadily grew into one of the region’s trusted glass manufacturers.
+            Building on this strong foundation, the company expanded its operations in <b>2022 with the launch of Star Line Glass Industries (Ghaziabad)</b>, strengthening production capacity and market reach while maintaining the same commitment to quality and innovation.
           </motion.p>
 
           <motion.p
