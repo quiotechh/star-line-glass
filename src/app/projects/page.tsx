@@ -207,7 +207,7 @@ export default function ProjectsPage() {
       id: "Plot-242-kundali",
       name: "Plot-242, Kundali",
       location: "Plot-242, Kundali, Haryana",
-      images: ["/projects/Plot 242 haryana.jpeg"],
+      images: ["/projects/plot 242 haryana.jpeg"],
       description:
         "Complete glazing solution for residential plot in Kundali, Haryana",
       category: "Residential",
@@ -216,7 +216,7 @@ export default function ProjectsPage() {
       id: "Plot-342-kundali",
       name: "Plot-342, Kundali",
       location: "Plot-342, Kundali, Haryana",
-      images: ["/projects/Plot 342 haryana.jpeg"],
+      images: ["/projects/plot 342 haryana.jpeg"],
       description:
         "Modern glass facade for residential development at Plot 342, Kundali",
       category: "Residential",

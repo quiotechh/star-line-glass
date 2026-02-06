@@ -57,7 +57,7 @@ function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/contact_1.jpg"
+          src="/contact_hero.png"
           alt="Contact Image"
           fill
           className="object-cover object-center"
